@@ -1,0 +1,38 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/skiff-wire",
+    "crates/skiff-recovery",
+    "crates/skiff-quic",
+    "crates/skiff",
+    "crates/skiff-interop",
+    "crates/skiff-sim",
+    "crates/skiff-h3",
+]
+exclude = ["fuzz"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.81"
+license = "MIT OR Apache-2.0"
+repository = "https://example.invalid/skiff"
+
+[workspace.dependencies]
+skiff-wire = { path = "crates/skiff-wire", version = "0.1.0" }
+skiff-recovery = { path = "crates/skiff-recovery", version = "0.1.0" }
+skiff-quic = { path = "crates/skiff-quic", version = "0.1.0" }
+skiff = { path = "crates/skiff", version = "0.1.0" }
+skiff-h3 = { path = "crates/skiff-h3", version = "0.1.0" }
+thiserror = "2.0.12"
+ring = "0.17.14"
+rustls = { version = "0.23.46", default-features = false, features = ["ring", "std"] }
+rcgen = { version = "0.14.7", default-features = false, features = ["crypto", "ring"] }
+proptest = "1.6.0"
+criterion = { version = "0.5.1", default-features = false, features = ["cargo_bench_support"] }
+
+[profile.release]
+debug = 1
+
+[profile.bench]
+debug = 1
