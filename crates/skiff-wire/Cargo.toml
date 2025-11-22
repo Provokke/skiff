@@ -1,0 +1,19 @@
+[package]
+name = "skiff-wire"
+description = "QUIC wire-format codecs: varints, packet headers, frames, transport parameters"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+criterion.workspace = true
+
+[[bench]]
+name = "codec"
+harness = false
