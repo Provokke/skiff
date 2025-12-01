@@ -1,0 +1,24 @@
+[package]
+name = "skiff-quic"
+description = "Sans-I/O QUIC (RFC 9000/9001) connection state machine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+skiff-wire.workspace = true
+skiff-recovery.workspace = true
+thiserror.workspace = true
+ring.workspace = true
+rustls.workspace = true
+
+[dev-dependencies]
+rcgen.workspace = true
+proptest.workspace = true
+criterion.workspace = true
+
+[[bench]]
+name = "protect"
+harness = false

@@ -1,0 +1,14 @@
+[package]
+name = "skiff-recovery"
+description = "RFC 9002 loss detection, RTT estimation and congestion control (NewReno, CUBIC)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
