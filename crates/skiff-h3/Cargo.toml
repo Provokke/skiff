@@ -1,0 +1,19 @@
+[package]
+name = "skiff-h3"
+description = "QPACK (RFC 9204) and HTTP/3 (RFC 9114) over skiff-quic connections"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+skiff-quic.workspace = true
+skiff-wire.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+rcgen.workspace = true
+rustls.workspace = true
+skiff-sim = { path = "../skiff-sim" }
