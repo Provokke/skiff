@@ -1,0 +1,19 @@
+[package]
+name = "skiff-sim"
+description = "Deterministic network simulator driving skiff-quic connections in virtual time"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+skiff-quic.workspace = true
+skiff-wire.workspace = true
+thiserror.workspace = true
+rustls.workspace = true
+rand = { version = "0.10.3", default-features = false, features = ["std", "std_rng"] }
+
+[dev-dependencies]
+skiff.workspace = true
+ring.workspace = true
