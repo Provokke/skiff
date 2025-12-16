@@ -1,0 +1,25 @@
+[package]
+name = "skiff-interop"
+description = "Interop tests: skiff against quinn and h3/h3-quinn over loopback UDP (dev-dependencies only)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+# No normal dependencies: this crate exists only for its tests, so quinn
+# never enters the dependency graph of the implementation crates.
+[dependencies]
+
+[dev-dependencies]
+skiff.workspace = true
+skiff-quic.workspace = true
+rustls.workspace = true
+ring.workspace = true
+quinn = { version = "0.11.9", default-features = false, features = ["runtime-tokio", "rustls-ring"] }
+tokio = { version = "1", default-features = false, features = ["rt", "time", "net"] }
+h3 = "0.0.8"
+h3-quinn = { version = "0.0.10", default-features = false }
+http = "1"
+bytes = "1"
