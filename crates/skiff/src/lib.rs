@@ -16,4 +16,3 @@ pub mod http3;
 pub mod tls;
 
 pub use endpoint::{ConnectionHandle, Endpoint, EndpointError, EndpointStats};
-
