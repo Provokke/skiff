@@ -1,0 +1,66 @@
+[package]
+name = "skiff-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+skiff-wire = { path = "../crates/skiff-wire" }
+skiff-quic = { path = "../crates/skiff-quic" }
+skiff-h3 = { path = "../crates/skiff-h3" }
+rustls = { version = "0.23.46", default-features = false, features = ["ring", "std"] }
+rcgen = { version = "0.14.7", default-features = false, features = ["crypto", "ring"] }
+
+[workspace]
+
+[[bin]]
+name = "header"
+path = "fuzz_targets/header.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "frame"
+path = "fuzz_targets/frame.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "params"
+path = "fuzz_targets/params.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "unprotect"
+path = "fuzz_targets/unprotect.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "reassembly"
+path = "fuzz_targets/reassembly.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "connection_recv"
+path = "fuzz_targets/connection_recv.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "qpack_decode"
+path = "fuzz_targets/qpack_decode.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "h3_frame"
+path = "fuzz_targets/h3_frame.rs"
+test = false
+doc = false
