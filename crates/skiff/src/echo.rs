@@ -319,4 +319,3 @@ pub fn payload(len: usize, seed: u8) -> Vec<u8> {
         .map(|i| (i as u32).wrapping_mul(2_654_435_761).to_be_bytes()[0] ^ seed)
         .collect()
 }
-
